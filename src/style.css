@@ -186,6 +186,10 @@ header {
     right: -30px;
 }
 
+.hero-image img.mobile {
+    display: none;
+}
+
 /* How Miotomo Works Section */
 .how-works {
     background: var(--purple-color);
@@ -625,15 +629,63 @@ footer {
 }
 
 /* Responsive Design */
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
         grid-template-columns: 1fr;
-        gap: var(--space-4xl); /* Using spacing variable */
+        gap: 0;
         text-align: center;
+    }
+
+    .hero-text {
+        width: 100%; /* Make hero-text 100% width on mobile */
     }
 
     .hero-text h1 {
         font-size: 32px;
+    }
+
+    .waitlist-note {
+        font-size: 14px; /* Make waitlist-note bigger on mobile */
+        /* The text will naturally wrap to multiple lines if needed */
+    }
+
+    /* Adjust email and button to stack and use full width on mobile */
+    .email-and-button {
+        width: 100%; /* Use full width */
+        /* gap: var(--space-xs); This gap will now apply vertically */
+    }
+
+    .waitlist-email-input {
+        width: 60%;
+        font-size: 16px;
+    }
+
+    .hero-btn.small-btn {
+        width: 40%; /* Make button take 30% width */
+        font-size: 15px;
+    }
+
+    /* Adjust hero image for mobile */
+    .hero-image {
+        text-align: center; /* Center the image container */
+        align-self: auto; /* Remove grid alignment */
+    }
+
+    .hero-image img {
+        position: static; /* Remove absolute positioning */
+        width: 100%; /* Make image responsive */
+        height: auto; /* Maintain aspect ratio */
+        bottom: auto; /* Remove bottom offset */
+        right: auto; /* Remove right offset */
+    }
+
+    .hero-image img.mobile {
+        display: block;
+    }
+
+    .hero-image img.desktop {
+        display: none;
     }
 
     .work-steps,
