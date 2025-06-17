@@ -1,0 +1,657 @@
+:root {
+    /* Colors */
+    --primary-color: #ff5722; /* Orange */
+    --secondary-color: #9c27b0; /* Purple */
+    --text-color: #333; /* Dark Grey */
+    --text-color-light: #666; /* Medium Grey */
+    --text-color-lighter: #999; /* Light Grey */
+    --background-light: #f8f9fa; /* Light background */
+    --background-lighter: #e9ecef; /* Lighter background */
+    --background-dark: #1a1a1a; /* Dark background */
+    --white: #fff;
+    --border-color: #f0f0f0; /* Light border */
+    --text-header: #e85c33;
+    --purple-color: #c492f1;
+    --purple-color-light: #d9b3ff;
+    --purple-color-lighter: #e8d5ff;
+
+    --section-header-color: #231917;
+
+    /* Spacing */
+    --space-xs: 8px;
+    --space-sm: 10px;
+    --space-md: 12px;
+    --space-lg: 15px;
+    --space-xl: 20px;
+    --space-2xl: 25px;
+    --space-3xl: 30px;
+    --space-4xl: 40px;
+    --space-5xl: 50px;
+    --space-6xl: 60px;
+    --space-7xl: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-xl); /* Using spacing variable */
+    position: relative;
+}
+
+/* Accessibility - Focus Outline */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Header */
+header {
+    background: var(--white);
+    padding: var(--space-xl) 0; /* Using spacing variable */
+    position: relative;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color); /* Using CSS variable */
+}
+
+.join-waitlist-header {
+    background: var(--primary-color); /* Using CSS variable */
+    color: var(--white);
+    padding: var(--space-sm) var(--space-xl); /* Using spacing variables */
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: var(--white);
+    padding: var(--space-6xl) 0 0; /* Using spacing variables */
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-7xl); /* Using spacing variable */
+    align-items: center;
+}
+.hero-text {
+    width: 80%;
+}
+.hero-text h1 {
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--primary-color); /* Using CSS variable */
+    margin-bottom: var(--space-2xl); /* Using spacing variable */
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 16px;
+    color: var(--text-color-light); /* Using CSS variable */
+    margin-bottom: var(--space-md); /* Using spacing variable */
+    line-height: 1.5;
+}
+
+.hero-btn {
+    background: var(--primary-color); /* Using CSS variable */
+    color: var(--white);
+    padding: var(--space-md) var(--space-2xl); /* Using spacing variables */
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: var(--space-3xl); /* Using spacing variable */
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs); /* Using spacing variable */
+}
+
+.waitlist-note {
+    font-size: 12px;
+    color: var(--text-color-lighter);
+    display: flex;
+    flex-direction: column; /* Stack the email/button and waitlist-content vertically */
+    align-items: flex-start; /* Align items to the center horizontally */
+    gap: var(--space-xs);
+    margin-bottom: var(--space-4xl);
+}
+
+.email-and-button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs); /* Space between input and button */
+}
+
+.waitlist-email-input {
+    padding: 0 10px; /* Remove padding */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 12px;
+    height: 32px; /* Set the height */
+    line-height: 22px; /* Adjust line-height to vertically center the text */
+    position: relative; /* Needed for the top property */
+}
+
+.hero-btn.small-btn {
+    padding: 0 16px; /* Remove padding */
+    font-size: 12px;
+    height: 32px; /* Set the height */
+    margin-bottom: 0;
+}
+
+.hero-image {
+    position: relative;
+    text-align: right; /* Keep text-align if needed for overall alignment in the grid cell */
+    align-self: end; /* Align this grid item to the bottom */
+}
+
+.hero-image img {
+    display: block; /* Helps remove extra space below image */
+    width: 140%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    bottom: -19px;
+    right: -30px;
+}
+
+/* How Miotomo Works Section */
+.how-works {
+    background: var(--purple-color);
+    padding: var(--space-7xl) 0; /* Using spacing variable */
+    text-align: center;
+}
+
+.how-works h2 {
+    color: var(--section-header-color);
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: var(--space-sm); /* Using spacing variable */
+}
+
+.how-works .subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    margin-bottom: var(--space-6xl); /* Using spacing variable */
+}
+
+.work-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3xl); /* Using spacing variable */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.work-step {
+    background: var(--white);
+    padding: var(--space-3xl) var(--space-xl); /* Using spacing variables */
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease; /* Optional: Add a slight transition */
+}
+
+/* Apply different rotations to each step */
+.work-steps .work-step:nth-child(1) {
+    transform: rotate(-10deg);
+}
+
+.work-steps .work-step:nth-child(2) {
+    transform: rotate(5.5deg);
+}
+
+.work-steps .work-step:nth-child(3) {
+    transform: rotate(-4.5deg);
+}
+
+.work-step.orange {
+    background: var(--primary-color); /* Using CSS variable */
+    color: var(--white);
+}
+
+.work-step.purple {
+    background: var(--secondary-color); /* Using CSS variable */
+    color: var(--white);
+}
+
+.step-icon {
+    width: var(--space-5xl); /* Using spacing variable */
+    height: var(--space-5xl); /* Using spacing variable */
+    margin: 0 auto var(--space-xl); /* Using spacing variable */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--space-xl); /* Using spacing variable */
+}
+
+.work-step h3 {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: var(--space-sm); /* Using spacing variable */
+    line-height: 1.3;
+}
+
+.work-step p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Benefits Section */
+.benefits {
+    background: var(--purple-color);
+    padding: var(--space-7xl) 0; /* Using spacing variable */
+    text-align: center;
+}
+
+.benefits h2 {
+    color: var(--section-header-color);
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: var(--space-sm); /* Using spacing variable */
+}
+
+.benefits .subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    margin-bottom: var(--space-6xl); /* Using spacing variable */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-6xl); /* Using spacing variable */
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl); /* Using spacing variable */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: var(--white);
+    padding: var(--space-2xl) var(--space-xl); /* Using spacing variables */
+    border-radius: 12px;
+    text-align: left;
+    transition: transform 0.3s ease; /* Optional: Add a slight transition for hover/focus effects if desired */
+}
+
+/* Apply different rotations to each card */
+.benefits-grid .benefit-card:nth-child(1) {
+    transform: rotate(-1.5deg);
+}
+
+.benefits-grid .benefit-card:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.benefits-grid .benefit-card:nth-child(3) {
+    transform: rotate(-0.8deg);
+}
+
+.benefits-grid .benefit-card:nth-child(4) {
+    transform: rotate(1.2deg);
+}
+
+.benefits-grid .benefit-card:nth-child(5) {
+    transform: rotate(-2deg);
+}
+
+.benefits-grid .benefit-card:nth-child(6) {
+    transform: rotate(0.5deg);
+}
+
+.benefit-icon {
+    width: var(--space-4xl); /* Using spacing variable */
+    height: var(--space-4xl); /* Using spacing variable */
+    border-radius: 8px;
+    margin-bottom: var(--space-lg); /* Using spacing variable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.benefit-icon.green {
+    background: #4caf50; /* Consider making this a variable if used elsewhere */
+    color: var(--white);
+}
+.benefit-icon.blue {
+    background: #2196f3; /* Consider making this a variable if used elsewhere */
+    color: var(--white);
+}
+.benefit-icon.orange {
+    background: var(--primary-color); /* Using CSS variable */
+    color: var(--white);
+}
+.benefit-icon.purple {
+    background: var(--secondary-color); /* Using CSS variable */
+    color: var(--white);
+}
+.benefit-icon.brown {
+    background: #8d6e63; /* Consider making this a variable if used elsewhere */
+    color: var(--white);
+}
+.benefit-icon.yellow {
+    background: #ffc107; /* Consider making this a variable if used elsewhere */
+    color: var(--white);
+}
+
+.benefit-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: var(--space-xs); /* Using spacing variable */
+    color: var(--text-color); /* Using CSS variable */
+}
+
+.benefit-card p {
+    font-size: 13px;
+    color: var(--text-color-light); /* Using CSS variable */
+    line-height: 1.4;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: var(--white);
+    padding: var(--space-7xl) 0; /* Using spacing variable */
+}
+
+.testimonials h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: var(--space-6xl); /* Using spacing variable */
+    color: var(--text-color); /* Using CSS variable */
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl); /* Using spacing variable */
+}
+
+.testimonial {
+    background: var(--primary-color); /* Using CSS variable */
+    color: var(--white);
+    padding: var(--space-2xl); /* Using spacing variable */
+    border-radius: 12px;
+    position: relative;
+    transition: transform 0.3s ease; /* Optional: Add a slight transition */
+}
+
+.testimonials-grid .testimonial:nth-child(1) {
+    transform: rotate(-7deg);
+}
+
+.testimonials-grid .testimonial:nth-child(2) {
+    transform: rotate(6deg);
+}
+
+.testimonials-grid .testimonial:nth-child(3) {
+    transform: rotate(-9deg);
+}
+
+.testimonial-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: var(--space-xl); /* Using spacing variable */
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md); /* Using spacing variable */
+}
+
+.author-avatar {
+    width: var(--space-4xl); /* Using spacing variable */
+    height: var(--space-4xl); /* Using spacing variable */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.author-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: var(--space-xs); /* Using spacing variable */
+}
+
+.author-info p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* FAQ Section */
+.faq {
+    background: var(--primary-color); /* Using CSS variable */
+    padding: var(--space-7xl) 0; /* Using spacing variable */
+}
+
+.faq h2 {
+    text-align: center;
+    color: var(--white);
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: var(--space-sm); /* Using spacing variable */
+}
+
+.faq .subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    margin-bottom: var(--space-5xl); /* Using spacing variable */
+}
+
+.faq-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--white);
+    margin-bottom: var(--space-2xl); /* Using spacing variable */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Optional: Add a slight transition */
+}
+
+/* Apply different rotations to each FAQ item */
+.faq-container .faq-item:nth-child(1) {
+    transform: rotate(-0.8deg);
+}
+
+.faq-container .faq-item:nth-child(2) {
+    transform: rotate(0.9deg);
+}
+
+.faq-container .faq-item:nth-child(3) {
+    transform: rotate(-0.8deg);
+}
+
+.faq-container .faq-item:nth-child(4) {
+    transform: rotate(0.7deg);
+}
+
+.faq-container .faq-item:nth-child(5) {
+    transform: rotate(-1.1deg);
+}
+
+.faq-question {
+    padding: var(--space-xl) var(--space-2xl); /* Using spacing variables */
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-color); /* Using CSS variable */
+    cursor: pointer;
+}
+
+.faq-answer {
+    padding: 0 var(--space-2xl) var(--space-xl); /* Using spacing variables */
+    color: var(--text-color-light); /* Using CSS variable */
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Final CTA Section */
+.final-cta {
+    background: linear-gradient(
+        135deg,
+        var(--background-light) 0%,
+        var(--background-lighter) 100%
+    ); /* Using CSS variables */
+    padding: var(--space-7xl) 0; /* Using spacing variable */
+    text-align: center;
+}
+
+.final-cta h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--text-color); /* Using CSS variable */
+    margin-bottom: var(--space-lg); /* Using spacing variable */
+}
+
+.final-cta p {
+    font-size: 16px;
+    color: var(--text-color-light); /* Using CSS variable */
+    margin-bottom: var(--space-4xl); /* Using spacing variable */
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-form {
+    /* New styles for the form container */
+    display: flex;
+    justify-content: center; /* Center the form elements */
+    align-items: center;
+    gap: var(--space-md); /* Space between input and button */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.cta-email-input {
+    /* New styles for the email input */
+    padding: var(--space-lg) var(--space-xl);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    min-width: 250px; /* Give input a minimum width */
+}
+
+.final-cta-btn {
+    background: var(--secondary-color); /* Using CSS variable */
+    color: var(--white);
+    padding: var(--space-lg) var(--space-3xl); /* Using spacing variables */
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: var(--background-dark); /* Using CSS variable */
+    color: var(--white);
+    padding: var(--space-4xl) 0 var(--space-xl); /* Using spacing variables */
+}
+
+.footer-content {
+    text-align: left;
+}
+
+.footer-brand {
+    margin-bottom: var(--space-3xl); /* Using spacing variable */
+}
+
+.footer-brand h3 {
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+
+    font-size: var(--space-xl); /* Using spacing variable */
+    font-weight: 600;
+    margin-bottom: var(--space-sm); /* Using spacing variable */
+}
+
+.footer-brand p {
+    color: #ccc; /* Consider making this a variable if used elsewhere */
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 300px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333; /* Consider making this a variable if used elsewhere */
+    padding-top: var(--space-xl); /* Using spacing variable */
+    margin-top: var(--space-3xl); /* Using spacing variable */
+    font-size: 12px;
+    color: var(--text-color-lighter); /* Using CSS variable */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-4xl); /* Using spacing variable */
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .work-steps,
+    .benefits-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl); /* Using spacing variable */
+    }
+
+    .child-placeholder {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Added another breakpoint for larger screens if needed */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 var(--space-2xl);
+    }
+}
