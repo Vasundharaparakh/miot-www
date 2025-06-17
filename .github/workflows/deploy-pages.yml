@@ -1,0 +1,47 @@
+name: Deploy Static Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Change this to your default branch if it's not main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write # Allows the action to create and deploy to GitHub Pages
+      id-token: write # Allows the deployment to authenticate with GitHub Pages
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Optional: If your project needs Node.js for any reason (e.g., build steps later)
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '20' # Use the Node.js version you need
+
+      - name: Copy files to build directory
+        run: |
+          mkdir _site # Create the directory that will be deployed
+          cp -R miotomo/miot-www/src/* _site/ # Copy contents from src to _site
+          # Note: cp -R copies directories recursively, including hidden files if any
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site" # Upload the contents of the _site directory
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
